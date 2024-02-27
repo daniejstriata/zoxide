@@ -42,14 +42,12 @@ install -Dpm 0644 contrib/completions/%{name}.bash %{buildroot}%{_datadir}/bash-
 install -Dpm 0644 contrib/completions/%{name}.fish -t %{buildroot}/%{_datadir}/fish/vendor_completions.d/
 
 # Copy the binary to /bin in the buildroot
-install -m 755 target/release/%{name} %{buildroot}/bin/
-
-# Copy Bash completion
-install -m 755 gen/completions/%{name}.bash %{buildroot}/etc/bash_completion.d/
+mkdir -p %{buildroot}%{_bindir}
+install -m 755 target/release/%{name} %{buildroot}%{_bindir}
 
 # Copy the man page to /usr/share/man/man1 in the buildroot
-gzip gen/%{name}.1
-install -m 644 gen/%{name}.1.gz %{buildroot}%{_mandir}/man1/
+gzip man/man1/*.1
+install -m 644 man/man1/*.1.gz %{buildroot}%{_mandir}/man1/
 
 %files
 %license LICENSE
@@ -58,7 +56,7 @@ install -m 644 gen/%{name}.1.gz %{buildroot}%{_mandir}/man1/
 %{_datadir}/fish/vendor_completions.d/%{name}.fish
 %{_datadir}/zsh/site-functions/_%{name}
 %{_datadir}/bash-completion/completions/%{name}
-%{_mandir}/man1/%{name}.1.gz
+%{_mandir}/man1/*.1.gz
 
 %changelog
 * Wed Feb 21 2024 Danie de Jager - 0.9.4-2
