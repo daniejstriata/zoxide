@@ -30,7 +30,7 @@ to navigate to the best match.
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 export PATH="$PATH:$HOME/.cargo/bin"
 cargo build --release
-strip --strip-all %{buildroot}%{_bindir}/*
+strip --strip-all target/release/%{name}
 
 %install
 # Install manpages
@@ -45,11 +45,11 @@ install -Dpm 0644 contrib/completions/%{name}.fish -t %{buildroot}/%{_datadir}/f
 install -m 755 target/release/%{name} %{buildroot}/bin/
 
 # Copy Bash completion
-install -m 755 gen/completions/zoxide.bash %{buildroot}/etc/bash_completion.d/
+install -m 755 gen/completions/%{name}.bash %{buildroot}/etc/bash_completion.d/
 
 # Copy the man page to /usr/share/man/man1 in the buildroot
-gzip gen/zoxide.1
-install -m 644 gen/zoxide.1.gz %{buildroot}%{_mandir}/man1/
+gzip gen/%{name}.1
+install -m 644 gen/%{name}.1.gz %{buildroot}%{_mandir}/man1/
 
 %files
 %license LICENSE
