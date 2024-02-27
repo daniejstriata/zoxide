@@ -52,7 +52,6 @@ gzip gen/zoxide.1
 install -m 644 gen/zoxide.1.gz %{buildroot}%{_mandir}/man1/
 
 %files
-%files
 %license LICENSE
 %doc README.md CHANGELOG.md
 %{_bindir}/%{name}
