@@ -60,7 +60,7 @@ install -m 644 man/man1/*.1.gz %{buildroot}%{_mandir}/man1/
 
 %changelog
 * Mon May 6 2024 Danie de Jager - 0.9.4-3
-- Rebuild with rustc 1.77.2
+- Rebuild with rustc 1.78.0
 * Wed Feb 21 2024 Danie de Jager - 0.9.4-2
 - Cleanup SPEC file
 * Wed Feb 21 2024 Danie de Jager - 0.9.4-1
