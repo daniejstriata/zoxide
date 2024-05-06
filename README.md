@@ -81,7 +81,7 @@ zoxide can be installed in 4 easy steps:
    > The recommended way to install zoxide is via the install script:
    >
    > ```sh
-   > curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
+   > curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
    > ```
    >
    > Or, you can use a package manager:
@@ -99,8 +99,9 @@ zoxide can be installed in 4 easy steps:
    > | CentOS 7+           | [Copr]                  | `dnf copr enable atim/zoxide` <br /> `dnf install zoxide`                                             |
    > | ~Debian 11+~[^1]    | ~[Debian Packages]~     | ~`apt install zoxide`~                                                                                |
    > | Devuan 4.0+         | [Devuan Packages]       | `apt install zoxide`                                                                                  |
+   > | Exherbo Linux       | [Exherbo packages]      | `cave resolve -x repository/rust` <br /> `cave resolve -x zoxide`                                     |
    > | Fedora 32+          | [Fedora Packages]       | `dnf install zoxide`                                                                                  |
-   > | Gentoo              | [GURU Overlay]          | `eselect repository enable guru` <br /> `emerge --sync guru` <br /> `emerge app-shells/zoxide`        |
+   > | Gentoo              | [Gentoo Packages]       | `emerge app-shells/zoxide`                                                                            |
    > | Manjaro             |                         | `pacman -S zoxide`                                                                                    |
    > | openSUSE Tumbleweed | [openSUSE Factory]      | `zypper install zoxide`                                                                               |
    > | ~Parrot OS~[^1]     |                         | ~`apt install zoxide`~                                                                                |
@@ -130,7 +131,7 @@ zoxide can be installed in 4 easy steps:
    > Or, run this command in your terminal:
    >
    > ```sh
-   > curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
+   > curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
    > ```
 
    </details>
@@ -155,6 +156,12 @@ zoxide can be installed in 4 easy steps:
    > | [Chocolatey]    | `choco install zoxide`                |
    > | [conda-forge]   | `conda install -c conda-forge zoxide` |
    > | [Scoop]         | `scoop install zoxide`                |
+   >
+   > If you're using Cygwin, Git Bash, or MSYS2, you can also use the install script:
+   >
+   > ```sh
+   > curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+   > ```
 
    </details>
 
@@ -185,7 +192,13 @@ zoxide can be installed in 4 easy steps:
    >
    > | Repository | Instructions         |
    > | ---------- | -------------------- |
-   > | [Termux]   | `pkg install zoxide` |
+   > | [Termux]   | `pkg install zoxide` |  
+   >
+   > Or, run this command in your terminal:
+   >
+   > ```sh
+   > curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
+   > ```
 
    </details>
 
@@ -196,7 +209,7 @@ zoxide can be installed in 4 easy steps:
    <details>
    <summary>Bash</summary>
 
-   > Add this to the **end** of your config file (usually `~/.bashrc`):
+   > Add this to the <ins>**end**</ins> of your config file (usually `~/.bashrc`):
    >
    > ```sh
    > eval "$(zoxide init bash)"
@@ -207,7 +220,7 @@ zoxide can be installed in 4 easy steps:
    <details>
    <summary>Elvish</summary>
 
-   > Add this to the **end** of your config file (usually `~/.elvish/rc.elv`):
+   > Add this to the <ins>**end**</ins> of your config file (usually `~/.elvish/rc.elv`):
    >
    > ```sh
    > eval (zoxide init elvish | slurp)
@@ -221,7 +234,7 @@ zoxide can be installed in 4 easy steps:
    <details>
    <summary>Fish</summary>
 
-   > Add this to the **end** of your config file (usually
+   > Add this to the <ins>**end**</ins> of your config file (usually
    > `~/.config/fish/config.fish`):
    >
    > ```fish
@@ -233,14 +246,14 @@ zoxide can be installed in 4 easy steps:
    <details>
    <summary>Nushell</summary>
 
-   > Add this to the **end** of your env file (find it by running `$nu.env-path`
+   > Add this to the <ins>**end**</ins> of your env file (find it by running `$nu.env-path`
    > in Nushell):
    >
    > ```sh
    > zoxide init nushell | save -f ~/.zoxide.nu
    > ```
    >
-   > Now, add this to the **end** of your config file (find it by running
+   > Now, add this to the <ins>**end**</ins> of your config file (find it by running
    > `$nu.config-path` in Nushell):
    >
    > ```sh
@@ -255,7 +268,7 @@ zoxide can be installed in 4 easy steps:
    <details>
    <summary>PowerShell</summary>
 
-   > Add this to the **end** of your config file (find it by running
+   > Add this to the <ins>**end**</ins> of your config file (find it by running
    > `echo $profile` in PowerShell):
    >
    > ```powershell
@@ -267,7 +280,7 @@ zoxide can be installed in 4 easy steps:
    <details>
    <summary>Xonsh</summary>
 
-   > Add this to the **end** of your config file (usually `~/.xonshrc`):
+   > Add this to the <ins>**end**</ins> of your config file (usually `~/.xonshrc`):
    >
    > ```python
    > execx($(zoxide init xonsh), 'exec', __xonsh__.ctx, filename='zoxide')
@@ -278,7 +291,7 @@ zoxide can be installed in 4 easy steps:
    <details>
    <summary>Zsh</summary>
 
-   > Add this to the **end** of your config file (usually `~/.zshrc`):
+   > Add this to the <ins>**end**</ins> of your config file (usually `~/.zshrc`):
    >
    > ```sh
    > eval "$(zoxide init zsh)"
@@ -293,7 +306,7 @@ zoxide can be installed in 4 easy steps:
    <details>
    <summary>Any POSIX shell</summary>
 
-   > Add this to the **end** of your config file:
+   > Add this to the <ins>**end**</ins> of your config file:
    >
    > ```sh
    > eval "$(zoxide init posix --hook prompt)"
@@ -444,6 +457,7 @@ Environment variables[^2] can be used for configuration. They must be set before
 | [vim] / [neovim]      | Text editor                                  | [zoxide.vim]               |
 | [xplr]                | File manager                                 | [zoxide.xplr]              |
 | [xxh]                 | Transports shell configuration over SSH      | [xxh-plugin-prerun-zoxide] |
+| [yazi]                | File manager                                 | Natively supported         |
 | [zabb]                | Finds the shortest possible query for a path | Natively supported         |
 | [zsh-autocomplete]    | Realtime completions for zsh                 | Natively supported         |
 
@@ -471,6 +485,7 @@ Environment variables[^2] can be used for configuration. They must be set before
 [crates.io-badge]: https://img.shields.io/crates/v/zoxide?logo=rust&logoColor=white&style=flat-square
 [crates.io]: https://crates.io/crates/zoxide
 [debian packages]: https://packages.debian.org/stable/admin/zoxide
+[exherbo packages]: https://gitlab.exherbo.org/exherbo/rust/-/tree/master/packages/sys-apps/zoxide
 [devuan packages]: https://pkginfo.devuan.org/cgi-bin/package-query.html?c=package&q=zoxide
 [downloads-badge]: https://img.shields.io/github/downloads/ajeetdsouza/zoxide/total?logo=github&logoColor=white&style=flat-square
 [dports]: https://github.com/DragonFlyBSD/DPorts/tree/master/sysutils/zoxide
@@ -481,9 +496,9 @@ Environment variables[^2] can be used for configuration. They must be set before
 [fzf-installation]: https://github.com/junegunn/fzf#installation
 [fzf-man]: https://manpages.ubuntu.com/manpages/en/man1/fzf.1.html
 [fzf]: https://github.com/junegunn/fzf
+[gentoo packages]: https://packages.gentoo.org/packages/app-shells/zoxide
 [glob]: https://man7.org/linux/man-pages/man7/glob.7.html
 [guix]: https://packages.guix.gnu.org/packages/zoxide/
-[guru overlay]: https://github.com/gentoo-mirror/guru
 [homebrew]: https://formulae.brew.sh/formula/zoxide
 [issues]: https://github.com/ajeetdsouza/zoxide/issues/new
 [joshuto]: https://github.com/kamiyaa/joshuto
@@ -519,6 +534,7 @@ Environment variables[^2] can be used for configuration. They must be set before
 [xplr]: https://github.com/sayanarijit/xplr
 [xxh-plugin-prerun-zoxide]: https://github.com/xxh/xxh-plugin-prerun-zoxide
 [xxh]: https://github.com/xxh/xxh
+[yazi]: https://github.com/sxyazi/yazi
 [zabb]: https://github.com/Mellbourn/zabb
 [zoxide.el]: https://gitlab.com/Vonfry/zoxide.el
 [zoxide.vim]: https://github.com/nanotee/zoxide.vim
