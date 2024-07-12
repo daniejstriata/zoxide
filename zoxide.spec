@@ -1,6 +1,6 @@
 %define name zoxide
 %define version 0.9.4
-%define release 3%{?dist}
+%define release 4%{?dist}
 
 Summary:  Fast cd command that learns your habits
 Name:     %{name}
@@ -59,6 +59,8 @@ install -m 644 man/man1/*.1.gz %{buildroot}%{_mandir}/man1/
 %{_mandir}/man1/*.1.gz
 
 %changelog
+* Fri Jul 12 2024 Danie de Jager - 0.9.4-4
+- Rebuild with rustc 1.79.0
 * Mon May 6 2024 Danie de Jager - 0.9.4-3
 - Rebuild with rustc 1.78.0
 * Wed Feb 21 2024 Danie de Jager - 0.9.4-2
